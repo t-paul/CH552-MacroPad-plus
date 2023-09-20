@@ -74,126 +74,88 @@ void USB_ISR(void) __interrupt(INT_NO_USB) {
 // +---+---+---+    -----
 */
 
-// Key 1 example -> mouse wheel up (scroll page)
-// ---------------------------------------------
-
 // Define action(s) if key1 was pressed
 inline void KEY1_PRESSED() {
-                                                      // nothing to do
+  CON_press(CON_MEDIA_STOP);
 }
 
 // Define action(s) if key1 was released
 inline void KEY1_RELEASED() {
-                                                      // nothing to do
+  CON_release();
 }
 
 // Define action(s) when key1 is held
 inline void KEY1_HOLD() {
-  MOUSE_wheel_up();                                   // turn mouse wheel up
-  DLY_ms(10);                                         // delay
 }
-
-// Key 2 example -> ALT + TAB (switch application)
-// -----------------------------------------------
 
 // Define action(s) if key2 was pressed
 inline void KEY2_PRESSED() {
-  KBD_press(KBD_KEY_LEFT_ALT);                        // press left ALT key
+  CON_press(CON_MEDIA_PLAY);
 }
 
 // Define action(s) if key2 was released
 inline void KEY2_RELEASED() {
-  KBD_release(KBD_KEY_LEFT_ALT);                      // release left ALT key
+  CON_release();
 }
 
 // Define action(s) when key2 is held
 inline void KEY2_HOLD() {
-  KBD_type(KBD_KEY_TAB);                              // press and release TAB key
-  DLY_ms(500);                                        // delay
 }
-
-// Key 3 example -> WIN + DOWN ARROW (show apps)
-// ---------------------------------------------
 
 // Define action(s) if key3 was pressed
 inline void KEY3_PRESSED() {
-  KBD_press(KBD_KEY_LEFT_GUI);                        // press left WIN key
-  KBD_press(KBD_KEY_DOWN_ARROW);                      // press DOWN ARROW key
+  CON_press(CON_MEDIA_PAUSE);
 }
 
 // Define action(s) if key3 was released
 inline void KEY3_RELEASED() {
-  KBD_release(KBD_KEY_DOWN_ARROW);                    // release DOWN ARROW key
-  KBD_release(KBD_KEY_LEFT_GUI);                      // release left WIN key
+  CON_release();
 }
 
 // Define action(s) when key3 is held
 inline void KEY3_HOLD() {
-                                                      // nothing to do
 }
-
-// Key 4 example -> CTRL + ALT + DEL (shutdown)
-// --------------------------------------------
 
 // Define action(s) if key4 was pressed
 inline void KEY4_PRESSED() {
-  KBD_press(KBD_KEY_LEFT_CTRL);                       // press left CTRL key
-  KBD_press(KBD_KEY_LEFT_ALT);                        // press left ALT key
-  KBD_press(KBD_KEY_DELETE);                          // press DEL key
+  KBD_press('d');
 }
 
 // Define action(s) if key4 was released
 inline void KEY4_RELEASED() {
-  KBD_release(KBD_KEY_DELETE);                        // release DEL key
-  KBD_release(KBD_KEY_LEFT_ALT);                      // release left ALT key
-  KBD_release(KBD_KEY_LEFT_CTRL);                     // release left CTRL key
+  KBD_release('d');
 }
 
 // Define action(s) when key4 is held
 inline void KEY4_HOLD() {
-                                                      // nothing to do
 }
-
-// Key 5 example -> Linux open terminal and run shutdown command
-// -------------------------------------------------------------
 
 // Define action(s) if key5 was pressed
 inline void KEY5_PRESSED() {
-  KBD_press(KBD_KEY_LEFT_GUI);                        // press left WIN key
-  KBD_type('t');                                      // press and release 'T' key
-  DLY_ms(500);                                        // wait for terminal to open
-  KBD_release(KBD_KEY_LEFT_GUI);                      // release left WIN key
-  KBD_print("sudo shutdown -h now");                  // type shutdown command
-  KBD_type(KBD_KEY_RETURN);                           // press and release RETURN key
+  KBD_press('e');
 }
 
 // Define action(s) if key5 was released
 inline void KEY5_RELEASED() {
-                                                      // nothing to do
+  KBD_release('e');
 }
 
 // Define action(s) when key5 is held
 inline void KEY5_HOLD() {
-                                                      // nothing to do
 }
-
-// Key 6 example -> mouse wheel down (scroll page)
-// -----------------------------------------------
 
 // Define action(s) if key6 was pressed
 inline void KEY6_PRESSED() {
-                                                      // nothing to do
+  KBD_press('f');
 }
 
 // Define action(s) if key6 was released
 inline void KEY6_RELEASED() {
-                                                      // nothing to do
+  KBD_release('f');
 }
 
 // Define action(s) when key6 is held
 inline void KEY6_HOLD() {
-  MOUSE_wheel_down();                                 // turn mouse wheel down
-  DLY_ms(10);                                         // delay
 }
 
 // Rotary encoder example -> volume control knob

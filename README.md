@@ -1,3 +1,36 @@
+# 202210-new-keyboard
+
+Updated configuration for the hardware sold as "202210-new-keyboard" on Amazon ([amazon.de](https://www.amazon.de/dp/B0BX3KBHFN)).
+
+![202210-new-keyboard.jpg](documentation/202210-new-keyboard.jpg)
+
+The PCB has 6 empty positions for the WS2812-2020 under the keys, but none around the encoder.
+
+Connections of the CH552G
+
+| Pin | Function | Keyboard Connection |
+| --: | -------- | ------------------- |
+|  1  | P3.2     | Button 6            |
+|  2  | P1.4     | Button 5            |
+|  3  | P1.5     | Button 4            |
+|  4  | P1.6     | Button 1            |
+|  5  | P1.7     | Button 2            |
+|  6  | RST      |                     |
+|  7  | P3.1     | Encoder A           |
+|  8  | P3.0     | Encoder B           |
+|  9  | P1.1     | Button 3            |
+| 10  | P3.3     | Encoder Button      |
+| 11  | P3.4     | LEDs                |
+| 12  | P3.6     | ?                   |
+| 13  | P3.7     | ?                   |
+| 14  | GND      |                     |
+| 15  | VCC      |                     |
+| 16  | V33      |                     |
+
+---
+original documentation follows
+---
+
 # CH552G MacroPad plus
 The MacroPad plus is a versatile extension for your keyboard that has six programmable keys and a rotary encoder knob. These buttons and the knob can be configured to perform a variety of actions, such as triggering specific key combinations, mouse movements, and game controller inputs. You can easily modify the firmware used to operate the MacroPad to suit your needs.
 
